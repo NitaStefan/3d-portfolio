@@ -1,0 +1,2 @@
+export const SKILLS_SECTION_HEIGHT = 600
+export const PROJECTS_SECTION_HEIGHT = 700
