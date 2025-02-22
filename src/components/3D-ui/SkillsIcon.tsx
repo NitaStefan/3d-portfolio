@@ -25,7 +25,7 @@ const SkillsIcon = () => {
   const aspRatio = viewport.width / viewport.height
   // const width = Math.min(10 * aspRatio)
   const width = 10 * aspRatio
-  const height = 9 * aspRatio
+  const height = 5
 
   return <primitive object={gltf.scene} position={[-width / 3, height, 0]} />
 }

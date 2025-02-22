@@ -3,12 +3,11 @@ import { useThree } from "@react-three/fiber"
 const Test = () => {
   const { viewport } = useThree()
 
-  //
   const aspRatio = viewport.width / viewport.height
+  // come in the middle when smaller than 9.8
   const width = Math.min(10 * aspRatio, 9.8)
-  const height = 5
+  const height = 15
 
-  console.log(aspRatio)
   // return null
 
   return (

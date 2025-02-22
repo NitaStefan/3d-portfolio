@@ -8,18 +8,16 @@ const Sections = () => {
   const skillsSection = useRef<Group>(null)
   const { viewport, size } = useThree()
 
-  //TODO: create a hook out of this to compute height for every mesh based on px (efficient - recalculated only on screen height change)
   useEffect(() => {
     const handleScroll = () => {
-      const skillsSectionUnits =
-        viewport.height * (SKILLS_SECTION_HEIGHT / size.height)
+      const yPosition =
+        (viewport.height / size.height) *
+        (window.scrollY - (size.height + SKILLS_SECTION_HEIGHT) / 2)
 
-      const scrollAmount =
-        (window.scrollY / (size.height + SKILLS_SECTION_HEIGHT)) *
-        (viewport.height + skillsSectionUnits)
-
-      skillsSection.current?.position.setY(
-        -viewport.height / 2 - skillsSectionUnits / 2 + scrollAmount
+      skillsSection.current?.position.setY(yPosition)
+      // keep the same scale even in height resize
+      skillsSection.current?.scale.setScalar(
+        (viewport.height / size.height) * 20
       )
     }
 
@@ -28,18 +26,13 @@ const Sections = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [viewport.height, size.height]) // viewport.height - constant
+  }, [viewport.height, viewport.width, size.height]) // viewport.height - constant
 
-  // const skillsSectionUnits =
-  //   viewport.height * (SKILLS_SECTION_HEIGHT / size.height)
+  console.log(viewport.width / viewport.height, size.width / size.height)
 
   return (
     <>
-      <group
-        ref={skillsSection}
-        // position={[0, -viewport.height / 2 - skillsSectionUnits / 2, 0]}
-        // scale={[2, 2, 2]}
-      >
+      <group ref={skillsSection} position-y={-100}>
         <Skills3D />
       </group>
     </>

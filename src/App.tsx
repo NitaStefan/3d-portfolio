@@ -11,7 +11,7 @@ function App() {
     <main className="max-w-4xl mx-auto">
       <Hero />
       <section className="fixed top-0 left-0 w-full h-full">
-        <Canvas camera={{ position: [0, 0, 20] }}>
+        <Canvas>
           {/* <Perf position="top-left" /> */}
           <Sections />
         </Canvas>
