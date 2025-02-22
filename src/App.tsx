@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber"
-import Hero from "./components/ui/Hero"
-import Projects from "./components/ui/Projects"
-import Visuals from "./components/Visuals"
+import Hero from "./components/Hero"
+import Sections from "./components/graphics-sections/Sections"
 // import { Perf } from "r3f-perf"
-import AdditionalSection from "./components/ui/AdditionalSection"
-import SkillsSectionSpace from "./components/ui/SkillsSectionSpace"
+import AdditionalSection from "./components/AdditionalSection"
+import SkillsSectionSpace from "./components/SkillsSectionSpace"
+import Projects from "./components/Projects"
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <section className="fixed top-0 left-0 w-full h-full">
         <Canvas camera={{ position: [0, 0, 20] }}>
           {/* <Perf position="top-left" /> */}
-          <Visuals />
+          <Sections />
         </Canvas>
       </section>
       {/* height: 600px */}

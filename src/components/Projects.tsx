@@ -1,4 +1,4 @@
-import { PROJECTS_SECTION_HEIGHT } from "../../constants"
+import { PROJECTS_SECTION_HEIGHT } from "../constants"
 
 const Projects = () => {
   return (
