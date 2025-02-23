@@ -28,8 +28,6 @@ const Sections = () => {
     }
   }, [viewport.height, viewport.width, size.height]) // viewport.height - constant
 
-  console.log(viewport.width / viewport.height, size.width / size.height)
-
   return (
     <>
       <group ref={skillsSection} position-y={-100}>

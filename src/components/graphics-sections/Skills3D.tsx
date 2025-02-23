@@ -4,10 +4,11 @@ import Test from "../3D-ui/Test"
 const Skills3D = () => {
   return (
     <mesh>
-      <dodecahedronGeometry />
-      <meshBasicMaterial color="blue" wireframe />
-      <Test />
+      {/* <dodecahedronGeometry />
+      <meshBasicMaterial color="blue" wireframe /> */}
+
       <SkillsIcon />
+      <Test />
     </mesh>
   )
 }

@@ -1,13 +1,18 @@
-import { useLoader, useThree } from "@react-three/fiber"
-import { useEffect } from "react"
-import { Mesh, MeshMatcapMaterial, SRGBColorSpace, TextureLoader } from "three"
+import { useFrame, useLoader } from "@react-three/fiber"
+import { useEffect, useRef } from "react"
+import {
+  Group,
+  Mesh,
+  MeshMatcapMaterial,
+  SRGBColorSpace,
+  TextureLoader,
+} from "three"
 import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
 const SkillsIcon = () => {
-  const { viewport } = useThree()
-
-  const gltf = useLoader(GLTFLoader, "/skills.gltf")
-  const matcapTexture = useLoader(TextureLoader, "/matcap.jpg")
+  const gltf = useLoader(GLTFLoader, "/models/skills.gltf")
+  const matcapTexture = useLoader(TextureLoader, "textures/matcap.jpg")
+  const modelRef = useRef<Group | null>(null)
 
   // Apply material to all meshes
   useEffect(() => {
@@ -21,13 +26,19 @@ const SkillsIcon = () => {
       }
     })
   }, [gltf.scene, matcapTexture])
+  const height = 13.8
 
-  const aspRatio = viewport.width / viewport.height
-  // const width = Math.min(10 * aspRatio)
-  const width = 10 * aspRatio
-  const height = 5
+  useFrame(({ clock }) => {
+    if (modelRef.current) {
+      modelRef.current.position.y =
+        height + Math.sin(clock.getElapsedTime() * 1.5) * 0.1 + 0.03
+      modelRef.current.rotation.y += Math.sin(clock.getElapsedTime()) * 0.0005
+    }
+  })
 
-  return <primitive object={gltf.scene} position={[-width / 3, height, 0]} />
+  return (
+    <primitive ref={modelRef} object={gltf.scene} position={[1.5, height, 0]} />
+  )
 }
 
 export default SkillsIcon

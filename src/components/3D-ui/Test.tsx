@@ -12,7 +12,7 @@ const Test = () => {
 
   return (
     <>
-      <mesh position={[-width, height, 0]}>
+      {/* <mesh position={[-width, height, 0]}>
         <torusKnotGeometry args={[1, 0.3, 32, 6, 2, 3]} />
         <meshBasicMaterial color="red" wireframe />
       </mesh>
@@ -27,6 +27,11 @@ const Test = () => {
       <mesh position={[width, height, 0]} scale={0.1}>
         <dodecahedronGeometry />
         <meshBasicMaterial color="orange" wireframe />
+      </mesh> */}
+      //TODO Tech name on the front plate
+      <mesh position={[-18, 0, 0]}>
+        <boxGeometry args={[2, 0.4, 1]} />
+        <meshBasicMaterial color="gray" />
       </mesh>
     </>
   )
