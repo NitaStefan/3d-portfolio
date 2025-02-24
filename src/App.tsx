@@ -3,8 +3,8 @@ import Hero from "./components/Hero"
 import Sections from "./components/graphics-sections/Sections"
 // import { Perf } from "r3f-perf"
 import AdditionalSection from "./components/AdditionalSection"
-import SkillsSectionSpace from "./components/SkillsSectionSpace"
 import Projects from "./components/Projects"
+import Skills from "./components/Skills"
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </Canvas>
       </section>
       {/* height: 600px */}
-      <SkillsSectionSpace />
+      <Skills />
       <Projects />
       <AdditionalSection />
     </main>

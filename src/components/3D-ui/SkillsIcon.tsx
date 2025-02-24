@@ -11,7 +11,7 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
 const SkillsIcon = () => {
   const gltf = useLoader(GLTFLoader, "/models/skills.gltf")
-  const matcapTexture = useLoader(TextureLoader, "textures/matcap.jpg")
+  const matcapTexture = useLoader(TextureLoader, "/textures/green.jpg")
   const modelRef = useRef<Group | null>(null)
 
   // Apply material to all meshes

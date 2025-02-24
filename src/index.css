@@ -19,3 +19,9 @@
     font-family: var(--font-Inter);
   }
 }
+
+@layer components {
+  .tech-li {
+    @apply text-sm max-sm:text-xs font-extralight mt-[8px] rounded-md px-[10px] w-fit py-[2px] bg-medium-gray;
+  }
+}
