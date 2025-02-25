@@ -2,9 +2,9 @@ import { SKILLS_SECTION_HEIGHT } from "../constants";
 
 const Skills = () => {
   return (
-    <div
+    <section
       style={{ height: `${SKILLS_SECTION_HEIGHT}px` }}
-      className={`border-medium-gray relative flex items-center justify-center border-[5px]`}
+      className={`relative flex items-center justify-center`}
     >
       <h2 className="text-primary bg-secondary/20 absolute top-[20px] rounded-md py-[5px] pr-[15px] pl-[60px] text-2xl font-medium">
         Skills
@@ -48,7 +48,7 @@ const Skills = () => {
           </div>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

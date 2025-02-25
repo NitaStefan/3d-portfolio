@@ -9,8 +9,8 @@ import {
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
-const SkillsIcon = () => {
-  const gltf = useLoader(GLTFLoader, "/models/skills.gltf");
+const ProjectsIcon = () => {
+  const gltf = useLoader(GLTFLoader, "/models/projects.gltf");
   const matcapTexture = useLoader(TextureLoader, "/textures/green.jpg");
   const modelRef = useRef<Group | null>(null);
 
@@ -26,13 +26,14 @@ const SkillsIcon = () => {
       }
     });
   }, [gltf.scene, matcapTexture]);
-  const height = 15.8;
+  const height = 15.7;
 
   useFrame(({ clock }) => {
     if (modelRef.current) {
       modelRef.current.position.y =
         height + Math.sin(clock.getElapsedTime() * 1.5) * 0.15;
-      modelRef.current.rotation.y += Math.sin(clock.getElapsedTime()) * 0.0015;
+      modelRef.current.rotation.y += Math.sin(clock.getElapsedTime()) * 0.002;
+      modelRef.current.rotation.x += Math.sin(clock.getElapsedTime()) * 0.001;
     }
   });
 
@@ -40,9 +41,10 @@ const SkillsIcon = () => {
     <primitive
       ref={modelRef}
       object={gltf.scene}
-      position={[-1.8, height, 0]}
+      position={[-2.5, height, 0]}
+      rotation={[0.5, 0.55, 0]}
     />
   );
 };
 
-export default SkillsIcon;
+export default ProjectsIcon;

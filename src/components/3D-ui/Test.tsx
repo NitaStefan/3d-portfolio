@@ -1,14 +1,14 @@
-import { useThree } from "@react-three/fiber"
+import { useThree } from "@react-three/fiber";
 
 const Test = () => {
-  const { viewport } = useThree()
+  const { viewport } = useThree();
 
-  const aspRatio = viewport.width / viewport.height
+  const aspRatio = viewport.width / viewport.height;
   // come in the middle when smaller than 9.8
-  const width = Math.min(10 * aspRatio, 9.8)
-  const height = 15
+  const width = Math.min(10 * aspRatio, 1);
+  const height = 0;
 
-  return null
+  return null;
 
   return (
     <>
@@ -29,7 +29,7 @@ const Test = () => {
         <meshBasicMaterial color="orange" wireframe />
       </mesh>
     </>
-  )
-}
+  );
+};
 
-export default Test
+export default Test;
