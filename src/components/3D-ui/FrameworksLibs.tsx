@@ -1,12 +1,12 @@
-import { useThree } from "@react-three/fiber"
-import TechSkill from "./TechSkill"
-import { MathUtils } from "three"
+import { useThree } from "@react-three/fiber";
+import TechSkill from "./TechSkill";
+import { MathUtils } from "three";
 
 const FrameworksLibs = () => {
-  const { viewport } = useThree()
+  const { viewport } = useThree();
 
-  const aspRatio = viewport.width / viewport.height
-  const width = MathUtils.clamp(13 * aspRatio, 7.5, 20)
+  const aspRatio = viewport.width / viewport.height;
+  const width = MathUtils.clamp(13 * aspRatio, 7.5, 20);
 
   const frameworksLibs = [
     { text: "Next.js", logoURL: "/images/nextjs-logo.png", width: -width },
@@ -14,7 +14,7 @@ const FrameworksLibs = () => {
     { text: "TailwindCSS", logoURL: "/images/tailwind-logo.png", width: 0 },
     { text: "Three.js", logoURL: "/images/threejs-logo.png", width: width / 2 },
     { text: "Spring", logoURL: "/images/spring-logo.png", width: width },
-  ]
+  ];
 
   const programmingLanguages = [
     {
@@ -35,7 +35,7 @@ const FrameworksLibs = () => {
       width: (2.4 / 8) * width,
     },
     { text: "SQL", logoURL: "/images/sql-logo.png", width: (7 / 8) * width },
-  ]
+  ];
 
   return (
     <>
@@ -45,7 +45,7 @@ const FrameworksLibs = () => {
           text={text}
           logoURL={logoURL}
           width={width}
-          height={4.5}
+          height={7.5}
         />
       ))}
       {programmingLanguages.map(({ text, logoURL, width, logoURL2 }) => (
@@ -55,11 +55,11 @@ const FrameworksLibs = () => {
           logoURL={logoURL}
           logoURL2={logoURL2}
           width={width}
-          height={-2.5}
+          height={0.5}
         />
       ))}
     </>
-  )
-}
+  );
+};
 
-export default FrameworksLibs
+export default FrameworksLibs;

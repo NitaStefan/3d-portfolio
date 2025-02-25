@@ -22,6 +22,6 @@
 
 @layer components {
   .tech-li {
-    @apply text-sm max-sm:text-xs font-extralight mt-[8px] rounded-md px-[10px] w-fit py-[2px] bg-medium-gray;
+    @apply bg-medium-gray mt-[8px] w-fit rounded-md px-[10px] py-[2px] text-center text-sm font-extralight max-sm:text-xs;
   }
 }
