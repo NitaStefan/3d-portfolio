@@ -39,7 +39,7 @@ const Skills = () => {
         </h3>
         <ul className="flex justify-around gap-x-[10px]">
           <div className="grow justify-around gap-x-[10px] sm:flex">
-            <li className="tech-li">Object Oriented Programming</li>
+            <li className="tech-li">Object-Oriented Programming</li>
             <li className="tech-li">Data Structures and Algorithms</li>
           </div>
           <div className="grow justify-around gap-x-[10px] sm:flex">
