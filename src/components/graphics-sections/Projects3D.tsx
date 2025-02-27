@@ -2,11 +2,11 @@ import Computer from "../3D-ui/Computer";
 import ProjectsIcon from "../3D-ui/ProjectsIcon";
 import Test from "../3D-ui/Test";
 
-const Projects3D = () => {
+const Projects3D = ({ selectedProject }: { selectedProject: string }) => {
   return (
     <>
       <ProjectsIcon />
-      <Computer />
+      <Computer selectedProject={selectedProject} />
       <Test />
     </>
   );

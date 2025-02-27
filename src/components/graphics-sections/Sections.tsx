@@ -8,7 +8,8 @@ import {
 import Skills3D from "./Skills3D";
 import Projects3D from "./Projects3D";
 
-const Sections = () => {
+const Sections = ({ selectedProject }: { selectedProject: string }) => {
+  //TODD: move a bit more below, if the top bar is present on mobiles
   const { viewport, size } = useThree();
   const skillsSection = useRef<Group>(null);
   const projectsSection = useRef<Group>(null);
@@ -50,7 +51,7 @@ const Sections = () => {
         <Skills3D />
       </group>
       <group ref={projectsSection} position-y={-100}>
-        <Projects3D />
+        <Projects3D selectedProject={selectedProject} />
       </group>
     </>
   );

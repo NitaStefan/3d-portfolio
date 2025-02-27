@@ -3,8 +3,9 @@ import { useLoader, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Group } from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { ProjectName } from "../../types";
 
-const Computer = () => {
+const Computer = ({ selectedProject }: { selectedProject: ProjectName }) => {
   const gltf = useLoader(GLTFLoader, "/models/computer.gltf");
   const computerRef = useRef<Group>(null);
   const { size } = useThree();
@@ -13,9 +14,6 @@ const Computer = () => {
     if (computerRef.current) {
       const mouse = computerRef.current.getObjectByName("Object_13");
       const keyboard = computerRef.current.getObjectByName("Object_15");
-
-      computerRef.current.rotation.y = -0.2;
-      // computerRef.current.scale.setScalar(1.1);
 
       if (mouse) {
         mouse.position.set(-1, 4.5, -1);
@@ -34,30 +32,75 @@ const Computer = () => {
 
   useEffect(() => {
     const mediumScreen = size.width > 749.3;
-    // TODO: change the dividend on screen below medium
-    const scale = Math.min(size.width / 650, 2);
+    const scale = mediumScreen
+      ? Math.min(size.width / 650, 1.7)
+      : Math.min(size.width / 280, 1.5);
+    const yRotation = mediumScreen ? -0.2 : 0;
 
     const xPos = mediumScreen ? 9.2 : -0.5;
-    const yPos = -size.width / 150;
+    const yPos = mediumScreen
+      ? -14 + Math.pow(2, 4.2 - scale)
+      : -2 - scale * 1.5;
 
     if (computerRef.current) {
       computerRef.current.position.set(xPos, yPos, 5);
-
       computerRef.current.scale.setScalar(scale);
+      computerRef.current.rotation.y = yRotation;
     }
   }, [size.width]);
 
   return (
     <>
       <Environment preset="city" environmentIntensity={0.6} />
-      <primitive object={gltf.scene} ref={computerRef}>
-        <Html transform position={[0.4, 7.15, -4]}>
+      <primitive
+        object={gltf.scene}
+        ref={computerRef}
+        // visible={selectedProject === "NURBS"}
+      >
+        <Html transform position={[0.4, 7.15, -4]} distanceFactor={2.7}>
           <img
             src="/images/NURBS-visualizer.gif"
             alt="NURBS gif"
-            width="470"
+            width={1760}
             height="auto"
+            style={{
+              minWidth: "1760px",
+              display: selectedProject === "NURBS" ? "block" : "none",
+            }}
           />
+          <div
+            className="bg-black py-[70px]"
+            style={{
+              display: selectedProject === "HM Showcase" ? "block" : "none",
+            }}
+          >
+            <img
+              src="/images/hm-showcase.gif"
+              alt="NURBS gif"
+              width={1760}
+              height="auto"
+              style={{
+                minWidth: "1760px",
+              }}
+            />
+          </div>
+          <div
+            className="bg-black py-[230px]"
+            style={{
+              display:
+                selectedProject === "Appointment Manager" ? "block" : "none",
+            }}
+          >
+            <img
+              src="/images/appointments-manager.gif"
+              alt="NURBS gif"
+              width={1760}
+              height="auto"
+              style={{
+                minWidth: "1760px",
+              }}
+            />
+          </div>
         </Html>
       </primitive>
     </>

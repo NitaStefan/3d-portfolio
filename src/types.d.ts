@@ -1,4 +1,4 @@
-import { ThreeElements } from "@react-three/fiber"
+import { ThreeElements } from "@react-three/fiber";
 
 declare global {
   namespace React {
@@ -8,3 +8,9 @@ declare global {
     }
   }
 }
+
+type ProjectName =
+  | "NURBS"
+  | "Peak Planner"
+  | "HM Showcase"
+  | "Appointment Manager";
