@@ -1,7 +1,7 @@
 import { Project } from "./types";
 
 export const SKILLS_SECTION_HEIGHT = 700;
-export const PROJECTS_SECTION_HEIGHT = 850;
+export const PROJECTS_SECTION_HEIGHT = 1000;
 
 export const projects: Project[] = [
   {
@@ -42,19 +42,17 @@ export const projects: Project[] = [
   },
   {
     title: "Hospital Appointments Manager",
-    subtitle: "Web application for managing hospital appointments",
-    // techStack: "JavaFX, SQLite, JDBC",
+    subtitle: "Application for managing hospital appointments",
     techStack: [
-      { title: "React.js", imgURL: "/images/react-logo.png" },
-      { title: "React Three Fiber", imgURL: "/images/r3f-logo.png" },
-      { title: "Material UI", imgURL: "/images/material-ui-logo.png" },
+      { title: "JavaFX", imgURL: "/images/javafx-logo.png" },
+      { title: "SQLite", imgURL: "/images/sqlite-logo.png" },
+      { title: "JDBC", imgURL: "/images/jdbc-logo.png" },
     ],
     features: ["CRUD Operations", "Layered Architecture"],
   },
   {
     title: "Handmade Products Store",
     subtitle: "Presentation of different handmade accessories",
-    // techStack: "React.js",
     techStack: [{ title: "React.js", imgURL: "/images/react-logo.png" }],
     features: ["Handcrafted Product Showcases"],
   },

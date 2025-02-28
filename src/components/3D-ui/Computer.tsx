@@ -39,8 +39,8 @@ const Computer = ({ selectedProject }: { selectedProject: ProjectName }) => {
 
     const xPos = mediumScreen ? 9.2 : -0.5;
     const yPos = mediumScreen
-      ? -14 + 4 + Math.pow(2, 4.2 - scale)
-      : -2 + 7.5 - scale * 1.5;
+      ? -14 + 10 + Math.pow(2, 4.2 - scale)
+      : -2 + 15.5 - scale * 1.5;
 
     if (computerRef.current) {
       computerRef.current.position.set(xPos, yPos, 5);

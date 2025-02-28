@@ -16,7 +16,7 @@ const Projects = ({
       <h2 className="text-primary bg-secondary/20 absolute top-[20px] rounded-md py-[5px] pr-[15px] pl-[60px] text-2xl font-medium">
         Projects
       </h2>
-      <div className="bg-dark-gray/65 mr-[50%] w-[420px] px-[15px] max-md:mt-[500px] max-md:mr-0 max-md:w-full">
+      <div className="bg-dark-gray/65 mr-[50%] w-[420px] px-[15px] max-md:mt-[340px] max-md:mr-0 max-md:w-full">
         <div className="flex flex-col items-center max-md:rounded-md max-md:px-[10px] md:h-[400px]">
           <h3 className="text-primary border-primary w-full rounded-full border-[3px] text-center text-lg font-bold max-md:[text-shadow:_1px_2px_4px_rgb(0_0_0_/_0.8)]">
             <span className="">{selectedProject.title}</span>
@@ -48,13 +48,28 @@ const Projects = ({
             ))}
           </div>
         </div>
-        <div className="bg-medium-gray mt-[20px] flex flex-col items-start gap-[10px] rounded-md p-[10px]">
+        <div className="bg-medium-gray/80 mt-[20px] flex flex-col items-start gap-[12px] rounded-md px-[5px] py-[10px]">
           {projects.map((project) => (
             <button
-              key={project.title}
               onClick={() => handleProjectChange(project)}
+              className="flex w-full justify-between font-extralight hover:cursor-pointer"
             >
-              {project.title}
+              <span
+                className={`rounded-md px-[5px] ${project.title === selectedProject.title ? "bg-secondary" : ""}`}
+              >
+                {project.title}
+              </span>
+              <div className="flex gap-[7px]">
+                {project.techStack.map((tech) => (
+                  <img
+                    src={tech.imgURL}
+                    width={22}
+                    height={22}
+                    alt={tech.title}
+                    className="rounded-md"
+                  />
+                ))}
+              </div>
             </button>
           ))}
         </div>
