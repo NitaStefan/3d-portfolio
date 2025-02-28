@@ -6,12 +6,13 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import { useState } from "react";
 import Certificates from "./components/Certificates";
-import { ProjectName } from "./types";
+import { Project } from "./types";
+import { projects } from "./constants";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState<ProjectName>("NURBS");
+  const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
-  const handleProjectChange = (project: ProjectName) => {
+  const handleProjectChange = (project: Project) => {
     setSelectedProject(project);
   };
 
@@ -21,11 +22,14 @@ function App() {
       <section className="fixed top-0 left-0 h-full w-full">
         <Canvas>
           <Perf position="top-left" />
-          <Sections selectedProject={selectedProject} />
+          <Sections selectedProject={selectedProject.title} />
         </Canvas>
       </section>
       <Skills />
-      <Projects handleProjectChange={handleProjectChange} />
+      <Projects
+        handleProjectChange={handleProjectChange}
+        selectedProject={selectedProject}
+      />
       <Certificates />
     </main>
   );

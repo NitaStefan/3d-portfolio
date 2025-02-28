@@ -10,7 +10,14 @@ declare global {
 }
 
 type ProjectName =
-  | "NURBS"
+  | "NURBS Surface Visualizer"
   | "Peak Planner"
-  | "HM Showcase"
-  | "Appointment Manager";
+  | "Handmade Products Store"
+  | "Hospital Appointments Manager";
+
+type Project = {
+  title: ProjectName;
+  subtitle: string;
+  techStack: { title: string; imgURL: string }[];
+  features: string[];
+};

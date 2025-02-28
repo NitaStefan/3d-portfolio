@@ -39,8 +39,8 @@ const Computer = ({ selectedProject }: { selectedProject: ProjectName }) => {
 
     const xPos = mediumScreen ? 9.2 : -0.5;
     const yPos = mediumScreen
-      ? -14 + Math.pow(2, 4.2 - scale)
-      : -2 - scale * 1.5;
+      ? -14 + 4 + Math.pow(2, 4.2 - scale)
+      : -2 + 7.5 - scale * 1.5;
 
     if (computerRef.current) {
       computerRef.current.position.set(xPos, yPos, 5);
@@ -59,24 +59,40 @@ const Computer = ({ selectedProject }: { selectedProject: ProjectName }) => {
       >
         <Html transform position={[0.4, 7.15, -4]} distanceFactor={2.7}>
           <img
+            src="/images/peak-planner.gif"
+            alt="Peak Planner gif"
+            width={1760}
+            height="auto"
+            style={{
+              minWidth: "1760px",
+              display: selectedProject === "Peak Planner" ? "block" : "none",
+            }}
+          />
+          <img
             src="/images/NURBS-visualizer.gif"
             alt="NURBS gif"
             width={1760}
             height="auto"
             style={{
               minWidth: "1760px",
-              display: selectedProject === "NURBS" ? "block" : "none",
+              display:
+                selectedProject === "NURBS Surface Visualizer"
+                  ? "block"
+                  : "none",
             }}
           />
           <div
             className="bg-black py-[70px]"
             style={{
-              display: selectedProject === "HM Showcase" ? "block" : "none",
+              display:
+                selectedProject === "Handmade Products Store"
+                  ? "block"
+                  : "none",
             }}
           >
             <img
               src="/images/hm-showcase.gif"
-              alt="NURBS gif"
+              alt="Handmade Store gif"
               width={1760}
               height="auto"
               style={{
@@ -88,12 +104,14 @@ const Computer = ({ selectedProject }: { selectedProject: ProjectName }) => {
             className="bg-black py-[230px]"
             style={{
               display:
-                selectedProject === "Appointment Manager" ? "block" : "none",
+                selectedProject === "Hospital Appointments Manager"
+                  ? "block"
+                  : "none",
             }}
           >
             <img
               src="/images/appointments-manager.gif"
-              alt="NURBS gif"
+              alt="Appointments Manager gif"
               width={1760}
               height="auto"
               style={{

@@ -26,7 +26,7 @@ const ProjectsIcon = () => {
       }
     });
   }, [gltf.scene, matcapTexture]);
-  const height = 15.7;
+  const height = 23.2;
 
   useFrame(({ clock }) => {
     if (modelRef.current) {

@@ -7,8 +7,9 @@ import {
 } from "../../constants";
 import Skills3D from "./Skills3D";
 import Projects3D from "./Projects3D";
+import { ProjectName } from "../../types";
 
-const Sections = ({ selectedProject }: { selectedProject: string }) => {
+const Sections = ({ selectedProject }: { selectedProject: ProjectName }) => {
   //TODD: move a bit more below, if the top bar is present on mobiles
   const { viewport, size } = useThree();
   const skillsSection = useRef<Group>(null);
