@@ -1,14 +1,12 @@
 import { ProjectName } from "../../types";
 import Computer from "../3D-ui/Computer";
 import ProjectsIcon from "../3D-ui/ProjectsIcon";
-import Test from "../3D-ui/Test";
 
 const Projects3D = ({ selectedProject }: { selectedProject: ProjectName }) => {
   return (
     <>
       <ProjectsIcon />
       <Computer selectedProject={selectedProject} />
-      <Test />
     </>
   );
 };

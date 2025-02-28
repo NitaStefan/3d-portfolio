@@ -1,7 +1,14 @@
+import { CERTIFICATES_SECTION_HEIGHT } from "../constants";
+
 const Certificates = () => {
   return (
-    <section className="h-[800px] border border-gray-600">
-      <h1 className="text-xl">Certificates</h1>
+    <section
+      className="border border-gray-600"
+      style={{ height: `${CERTIFICATES_SECTION_HEIGHT}px` }}
+    >
+      <div className="flex h-full items-center justify-center">
+        <h1 className="text-xl">O</h1>
+      </div>
     </section>
   );
 };
