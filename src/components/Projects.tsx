@@ -1,5 +1,6 @@
 import { projects, PROJECTS_SECTION_HEIGHT } from "../constants";
 import { Project } from "../types";
+import DesktopMobileViews from "./ui/DesktopMobileViews";
 import ProjectTitle from "./ui/ProjectTitle";
 
 const Projects = ({
@@ -9,6 +10,13 @@ const Projects = ({
   selectedProject: Project;
   handleProjectChange: (project: Project) => void;
 }) => {
+  const toggleShowMobile = () => {
+    handleProjectChange({
+      ...selectedProject,
+      showMobile: !selectedProject.showMobile,
+    });
+  };
+
   return (
     <section
       className="relative flex items-center justify-center"
@@ -76,6 +84,12 @@ const Projects = ({
           ))}
         </div>
       </div>
+      {selectedProject.showMobile !== undefined && (
+        <DesktopMobileViews
+          showMobile={selectedProject.showMobile}
+          toggle={toggleShowMobile}
+        />
+      )}
     </section>
   );
 };

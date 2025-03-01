@@ -21,4 +21,5 @@ type Project = {
   techStack: { title: string; imgURL: string }[];
   features: string[];
   link?: string;
+  showMobile?: boolean;
 };

@@ -13,6 +13,7 @@
     "@react-three/drei": "^10.0.0",
     "@react-three/fiber": "^8.17.14",
     "@tailwindcss/vite": "^4.0.6",
+    "gsap": "^3.12.7",
     "r3f-perf": "^7.2.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

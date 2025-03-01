@@ -26,6 +26,7 @@ export const projects: Project[] = [
       "Secure JWT Authentication",
     ],
     link: "https://peak-planner-frontend.vercel.app/",
+    showMobile: false,
   },
   {
     title: "NURBS Surface Visualizer",

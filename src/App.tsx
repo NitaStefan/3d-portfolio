@@ -22,7 +22,10 @@ function App() {
       <section className="fixed top-0 left-0 h-full w-full">
         <Canvas>
           <Perf position="top-left" />
-          <Sections selectedProject={selectedProject.title} />
+          <Sections
+            selectedProject={selectedProject.title}
+            showMobile={selectedProject.showMobile}
+          />
         </Canvas>
       </section>
       <Skills />

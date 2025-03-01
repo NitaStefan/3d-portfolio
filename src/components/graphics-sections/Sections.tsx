@@ -10,8 +10,15 @@ import Skills3D from "./Skills3D";
 import Projects3D from "./Projects3D";
 import { ProjectName } from "../../types";
 import Certificates3D from "./Certificates3D";
+import gsap from "gsap";
 
-const Sections = ({ selectedProject }: { selectedProject: ProjectName }) => {
+const Sections = ({
+  selectedProject,
+  showMobile,
+}: {
+  selectedProject: ProjectName;
+  showMobile?: boolean;
+}) => {
   const { viewport, size } = useThree();
   const initHeightRef = useRef<number>(size.height);
   const skillsSection = useRef<Group>(null);
@@ -50,13 +57,29 @@ const Sections = ({ selectedProject }: { selectedProject: ProjectName }) => {
       // keep the same scale even in height resize
       const scalar = (viewport.height / size.height) * 20;
 
-      skillsSection.current?.position.setY(yPositionSkills);
+      if (skillsSection.current)
+        gsap.to(skillsSection.current.position, {
+          y: yPositionSkills,
+          duration: 0.05,
+          ease: "power2.out",
+        });
+
+      if (projectsSection.current)
+        gsap.to(projectsSection.current.position, {
+          y: yPositionProjects,
+          duration: 0.05,
+          ease: "power2.out",
+        });
+
+      if (certificatesSection.current)
+        gsap.to(certificatesSection.current.position, {
+          y: yPositionCertificates,
+          duration: 0.05,
+          ease: "power2.out",
+        });
+
       skillsSection.current?.scale.setScalar(scalar);
-
-      projectsSection.current?.position.setY(yPositionProjects);
       projectsSection.current?.scale.setScalar(scalar);
-
-      certificatesSection.current?.position.setY(yPositionCertificates);
       certificatesSection.current?.scale.setScalar(scalar);
     };
 
@@ -73,7 +96,7 @@ const Sections = ({ selectedProject }: { selectedProject: ProjectName }) => {
         <Skills3D />
       </group>
       <group ref={projectsSection} position-y={-100}>
-        <Projects3D selectedProject={selectedProject} />
+        <Projects3D selectedProject={selectedProject} showMobile={showMobile} />
       </group>
       <group ref={certificatesSection} position-y={-100}>
         <Certificates3D />
