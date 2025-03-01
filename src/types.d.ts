@@ -20,4 +20,5 @@ type Project = {
   subtitle: string;
   techStack: { title: string; imgURL: string }[];
   features: string[];
+  link?: string;
 };

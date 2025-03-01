@@ -25,6 +25,7 @@ export const projects: Project[] = [
       "Highly Customizable & Versatile",
       "Secure JWT Authentication",
     ],
+    link: "https://peak-planner-frontend.vercel.app/",
   },
   {
     title: "NURBS Surface Visualizer",
@@ -41,6 +42,7 @@ export const projects: Project[] = [
       "NURBS-Based Modeling",
       "Precise Geometric Representation",
     ],
+    link: "https://nitastefan.github.io/NURBS-Visualizer/",
   },
   {
     title: "Hospital Appointments Manager",

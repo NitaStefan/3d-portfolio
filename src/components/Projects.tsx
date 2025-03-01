@@ -1,5 +1,6 @@
 import { projects, PROJECTS_SECTION_HEIGHT } from "../constants";
 import { Project } from "../types";
+import ProjectTitle from "./ui/ProjectTitle";
 
 const Projects = ({
   selectedProject,
@@ -18,9 +19,10 @@ const Projects = ({
       </h2>
       <div className="bg-dark-gray/65 mr-[50%] w-[420px] px-[15px] max-md:mt-[340px] max-md:mr-0 max-md:w-full">
         <div className="flex flex-col items-center max-md:rounded-md max-md:px-[10px] md:h-[400px]">
-          <h3 className="text-primary border-primary w-full rounded-full border-[3px] text-center text-lg font-bold max-md:[text-shadow:_1px_2px_4px_rgb(0_0_0_/_0.8)]">
-            <span className="">{selectedProject.title}</span>
-          </h3>
+          <ProjectTitle
+            title={selectedProject.title}
+            link={selectedProject.link}
+          />
           <em className="text-light-gray max-md:text-lotion/70 w-full pt-[3px] text-center text-sm">
             {selectedProject.subtitle}
           </em>
