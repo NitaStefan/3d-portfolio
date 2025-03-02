@@ -1,5 +1,5 @@
 import { ProjectName } from "../../types";
-import Computer from "../3D-ui/Computer";
+import Computer from "../3D-ui/ComputerMobile";
 import ProjectsIcon from "../3D-ui/ProjectsIcon";
 
 const Projects3D = ({
