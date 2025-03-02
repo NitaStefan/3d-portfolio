@@ -2,8 +2,7 @@ import { Project } from "./types";
 
 export const SKILLS_SECTION_HEIGHT = 700;
 export const PROJECTS_SECTION_HEIGHT = 1000;
-// export const CERTIFICATES_SECTION_HEIGHT = 300;
-export const CERTIFICATES_SECTION_HEIGHT = 1000;
+export const CERTIFICATES_SECTION_HEIGHT = 300;
 
 export const projects: Project[] = [
   {

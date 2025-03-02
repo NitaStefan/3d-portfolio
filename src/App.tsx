@@ -8,6 +8,7 @@ import { useState } from "react";
 import Certificates from "./components/Certificates";
 import { Project } from "./types";
 import { projects } from "./constants";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
@@ -34,6 +35,7 @@ function App() {
         selectedProject={selectedProject}
       />
       <Certificates />
+      <Footer />
     </main>
   );
 }

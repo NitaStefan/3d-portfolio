@@ -15,7 +15,11 @@ const ProjectTitle = ({
   );
 
   return link ? (
-    <a className="w-full cursor-pointer" href={link} target="_blank">
+    <a
+      className="hover:bg-secondary/40 w-full cursor-pointer rounded-full"
+      href={link}
+      target="_blank"
+    >
       {TitleContent}
     </a>
   ) : (
