@@ -4,7 +4,7 @@ const Web = () => {
   return (
     <Html
       transform
-      position={[0.01, 0.05, -0.02]}
+      position={[0.02, 0.05, -0.02]}
       rotation={[-1.6, 0, 0]}
       distanceFactor={1.3}
     >

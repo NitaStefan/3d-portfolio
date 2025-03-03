@@ -14,7 +14,16 @@
 
 @layer base {
   body {
-    background-color: var(--color-dark-gray);
+    /* background-color: var(--color-dark-gray); */
+    /* TODO: to 30 and 70 add a color a biot darker that dark-gray */
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-dark-gray) 30%, black) 0%,
+      color-mix(in srgb, var(--color-dark-gray) 90%, black) 30%,
+      var(--color-dark-gray) 50%,
+      color-mix(in srgb, var(--color-dark-gray) 90%, black) 70%,
+      color-mix(in srgb, var(--color-dark-gray) 30%, black) 100%
+    );
     color: var(--color-lotion);
     font-family: var(--font-Inter);
   }

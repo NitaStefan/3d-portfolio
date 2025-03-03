@@ -19,8 +19,7 @@ function App() {
 
   return (
     <main className="mx-auto max-w-4xl">
-      <Hero />
-      <section className="fixed top-0 left-0 h-full w-full">
+      <section className="fixed top-0 left-0 z-[-1] h-full w-full">
         <Canvas>
           <Perf position="top-left" />
           <Sections
@@ -29,6 +28,7 @@ function App() {
           />
         </Canvas>
       </section>
+      <Hero />
       <Skills />
       <Projects
         handleProjectChange={handleProjectChange}

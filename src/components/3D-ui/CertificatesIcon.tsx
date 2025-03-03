@@ -42,7 +42,6 @@ const CertificatesIcon = () => {
       ref={modelRef}
       object={gltf.scene}
       position={[-3.6, height, 0]}
-      rotation-x={0.08}
     />
   );
 };
