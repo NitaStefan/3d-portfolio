@@ -53,7 +53,7 @@ const Sections = ({
             PROJECTS_SECTION_HEIGHT +
             CERTIFICATES_SECTION_HEIGHT * 1.67));
 
-      // keep the same scale even in height resize
+      // keep the same scale even on height resize
       const scalar = (viewport.height / size.height) * 20;
 
       if (skillsSection.current)

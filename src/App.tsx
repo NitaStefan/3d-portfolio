@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Hero from "./components/Hero";
 import Sections from "./components/graphics-sections/Sections";
-import { Perf } from "r3f-perf";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import { useState } from "react";
@@ -21,7 +20,6 @@ function App() {
     <main className="mx-auto max-w-4xl">
       <section className="fixed top-0 left-0 z-[-1] h-full w-full">
         <Canvas>
-          <Perf position="top-left" />
           <Sections
             selectedProject={selectedProject.title}
             showMobile={selectedProject.showMobile}
