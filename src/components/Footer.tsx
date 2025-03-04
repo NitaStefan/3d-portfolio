@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <hr className="border-light-gray/40 mb-[5px]" />
-      <footer className="flex h-[200px] flex-col justify-between gap-[20px] px-[30px] max-sm:px-[10px]">
+      <footer className="relative z-10 flex h-[200px] flex-col justify-between gap-[20px] px-[30px] max-sm:px-[10px]">
         <div className="flex items-center gap-[20px] max-sm:gap-[10px]">
           <span className="shrink-0 text-3xl font-light max-sm:text-2xl">
             Contact Me:
