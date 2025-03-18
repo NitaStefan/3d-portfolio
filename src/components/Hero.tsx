@@ -51,10 +51,10 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="shrink-0">
+        <div className="shrink-0 max-sm:pt-[25px]">
           <img
             src="/images/professional-profile.png"
-            width={200}
+            width={145}
             height="auto"
             alt="Profile picture"
             className="mb-[2px]"
