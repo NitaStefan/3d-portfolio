@@ -102,7 +102,7 @@ const Hero = () => {
             </a>
             <a
               className="flex flex-col items-center justify-end hover:opacity-70"
-              href="https://drive.google.com/file/d/1b_DT6np3COA4KyePJAmYm1cSDVvP5AVS/view?usp=sharing"
+              href="https://drive.google.com/file/d/1eKs8WzH7zjF1N7Lfkp2I-DVcwKQ_q8rG/view?usp=sharing"
               target="_blank"
             >
               <img
