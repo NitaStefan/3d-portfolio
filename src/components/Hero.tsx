@@ -37,7 +37,7 @@ const Hero = () => {
                   Under Babeș-Bolyai University
                 </p>
                 <em className="block pt-[10px] text-sm">
-                  Bachelor’s Degree in Mathematics
+                  Bachelor in Mathematics
                 </em>
               </div>
               <div className="flex flex-col items-end">
@@ -51,13 +51,13 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="shrink-0 max-sm:pt-[25px]">
+        <div className="shrink-0 max-sm:pt-[20px]">
           <img
             src="/images/professional-profile.png"
-            width={145}
+            width={140}
             height="auto"
             alt="Profile picture"
-            className="mb-[2px]"
+            className="mx-auto mb-[2px]"
           />
           <em className="rounded-full border px-[10px] py-[4px] font-extralight">
             Full Stack Developer
