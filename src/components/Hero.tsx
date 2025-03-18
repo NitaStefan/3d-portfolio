@@ -60,7 +60,7 @@ const Hero = () => {
             className="mb-[2px]"
           />
           <em className="rounded-full border px-[10px] py-[4px] font-extralight">
-            Aspiring Full Stack Developer
+            Full Stack Developer
           </em>
           <div className="mt-[8px] flex gap-x-[4px] opacity-70">
             <img
