@@ -37,16 +37,6 @@ const Skills = () => {
         <h3 className="text-lotion text-center text-lg font-thin">
           Software Engineering Principles
         </h3>
-        {/* <ul className="flex justify-around gap-x-[10px]">
-          <div className="grow justify-around gap-x-[10px] pl-[7%] sm:flex">
-            <li className="tech-li">Object-Oriented Programming</li>
-            <li className="tech-li">Data Structures and Algorithms</li>
-          </div>
-          <div className="grow justify-around gap-x-[10px] pr-[7%] sm:flex">
-            <li className="tech-li">Design Patterns</li>
-            <li className="tech-li">SOLID Principles</li>
-          </div>
-        </ul> */}
         <ul className="flex justify-around gap-x-[8px] px-[6px]">
           <li className="tech-li">Object-Oriented Programming</li>
           <li className="tech-li">Data Structures and Algorithms</li>

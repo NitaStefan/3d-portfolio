@@ -15,7 +15,7 @@ export const projects: Project[] = [
       { title: "Shadcn UI", imgURL: "/images/shadcn-ui-logo.png" },
       { title: "React Hook Form", imgURL: "/images/react-hook-form-logo.png" },
       { title: "Zod", imgURL: "/images/zod-logo.png" },
-      { title: "Spring", imgURL: "/images/spring-logo.png" },
+      { title: "Spring Boot", imgURL: "/images/spring-logo.png" },
       { title: "MySQL", imgURL: "/images/mysql-logo.png" },
     ],
     features: [

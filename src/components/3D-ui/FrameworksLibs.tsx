@@ -13,7 +13,7 @@ const FrameworksLibs = () => {
     { text: "React.js", logoURL: "/images/react-logo.png", width: -width / 2 },
     { text: "TailwindCSS", logoURL: "/images/tailwind-logo.png", width: 0 },
     { text: "Three.js", logoURL: "/images/threejs-logo.png", width: width / 2 },
-    { text: "Spring", logoURL: "/images/spring-logo.png", width: width },
+    { text: "Spring Boot", logoURL: "/images/spring-logo.png", width: width },
   ];
 
   const programmingLanguages = [
