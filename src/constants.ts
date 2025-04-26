@@ -10,7 +10,7 @@ export const projects: Project[] = [
     subtitle: "Scheduling & Goal-Tracking Application",
     techStack: [
       { title: "Next.js", imgURL: "/images/nextjs-logo.png" },
-      { title: "Typescript", imgURL: "/images/ts-logo.png" },
+      { title: "TypeScript", imgURL: "/images/ts-logo.png" },
       { title: "TailwindCSS", imgURL: "/images/tailwind-logo.png" },
       { title: "Shadcn UI", imgURL: "/images/shadcn-ui-logo.png" },
       { title: "React Hook Form", imgURL: "/images/react-hook-form-logo.png" },
