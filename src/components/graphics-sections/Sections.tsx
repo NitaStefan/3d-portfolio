@@ -10,7 +10,6 @@ import Skills3D from "./Skills3D";
 import Projects3D from "./Projects3D";
 import { ProjectName } from "../../types";
 import Certificates3D from "./Certificates3D";
-import gsap from "gsap";
 
 const Sections = ({
   selectedProject,
@@ -56,26 +55,32 @@ const Sections = ({
       // keep the same scale even on height resize
       const scalar = (viewport.height / size.height) * 20;
 
-      if (skillsSection.current)
-        gsap.to(skillsSection.current.position, {
-          y: yPositionSkills,
-          duration: 0.05,
-          ease: "power2.out",
-        });
+      skillsSection.current!.position.y = yPositionSkills;
+      projectsSection.current!.position.y = yPositionProjects;
+      certificatesSection.current!.position.y = yPositionCertificates;
 
-      if (projectsSection.current)
-        gsap.to(projectsSection.current.position, {
-          y: yPositionProjects,
-          duration: 0.05,
-          ease: "power2.out",
-        });
+      // if (skillsSection.current)
+      //   gsap.to(skillsSection.current.position, {
+      //     y: yPositionSkills,
+      //     duration: 0.01,
+      //     ease: "power4.out",
+      //   });
 
-      if (certificatesSection.current)
-        gsap.to(certificatesSection.current.position, {
-          y: yPositionCertificates,
-          duration: 0.05,
-          ease: "power2.out",
-        });
+      // if (projectsSection.current)
+      //   gsap.to(projectsSection.current.position, {
+      //     y: yPositionProjects,
+      //     duration: 0.01,
+      //     ease: "power4.out",
+      //   });
+
+      // if (certificatesSection.current)
+      //   gsap.to(certificatesSection.current.position, {
+      //     y: yPositionCertificates,
+      //     duration: 0.01,
+      //     ease: "power4.out",
+      //   });
+
+      // console.log("Tweens count:", gsap.globalTimeline.getChildren().length);
 
       skillsSection.current?.scale.setScalar(scalar);
       projectsSection.current?.scale.setScalar(scalar);

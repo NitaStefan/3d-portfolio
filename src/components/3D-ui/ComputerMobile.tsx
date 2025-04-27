@@ -46,7 +46,7 @@ const Computer = ({
 
       gsap.to(computerRef.current.position, {
         x: showMobile !== undefined && showMobile ? 80 : xPos,
-        duration: 0.4,
+        duration: 0.55,
         ease: "power2.out",
       });
     }
@@ -58,7 +58,7 @@ const Computer = ({
 
       gsap.to(mobileRef.current.position, {
         x: showMobile !== undefined && showMobile ? xPos : 80,
-        duration: 0.4,
+        duration: 0.55,
         ease: "power2.out",
       });
     }
