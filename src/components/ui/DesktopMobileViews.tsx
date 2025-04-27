@@ -11,10 +11,10 @@ const DesktopMobileViews = ({
 }) => {
   return (
     <div
-      className={`bg-medium-gray/60 absolute top-[20px] right-[2%] flex w-[65px] gap-x-[12px] rounded-md p-[5px] max-md:hidden md:right-[18%] ${isClose ? "md:top-[20px]" : "md:top-[120px]"} ${showMobile !== undefined && "md:w-[170px]"}`}
+      className={`bg-medium-gray/60 absolute top-[20px] right-[2%] flex w-[90px] gap-x-[7px] rounded-md md:right-[18%] md:w-[57px] ${isClose ? "md:top-[20px]" : "md:top-[120px]"} ${showMobile !== undefined && "md:w-[163px]"}`}
     >
       <div
-        className={`flex flex-col items-center ${showMobile === undefined && "hidden"}`}
+        className={`flex grow flex-col items-center p-[5px] ${showMobile === undefined ? "hidden" : ""}`}
       >
         <p className="text-xs font-light md:text-sm">
           {showMobile ? "Mobile View" : "Desktop View"}
