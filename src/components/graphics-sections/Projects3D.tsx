@@ -5,14 +5,20 @@ import ProjectsIcon from "../3D-ui/ProjectsIcon";
 const Projects3D = ({
   selectedProject,
   showMobile,
+  isClose,
 }: {
   selectedProject: ProjectName;
   showMobile?: boolean;
+  isClose: boolean;
 }) => {
   return (
     <>
       <ProjectsIcon />
-      <Computer selectedProject={selectedProject} showMobile={showMobile} />
+      <Computer
+        selectedProject={selectedProject}
+        showMobile={showMobile}
+        isClose={isClose}
+      />
     </>
   );
 };

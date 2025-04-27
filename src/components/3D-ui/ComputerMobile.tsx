@@ -11,9 +11,11 @@ import useSetupComputer from "../../hooks/useSetupComputer";
 const Computer = ({
   selectedProject,
   showMobile,
+  isClose,
 }: {
   selectedProject: ProjectName;
   showMobile?: boolean;
+  isClose: boolean;
 }) => {
   const computer = useLoader(GLTFLoader, "/models/computer.gltf");
   const mobile = useGLTF(
@@ -30,14 +32,19 @@ const Computer = ({
   useEffect(() => {
     const mediumScreen = size.width > 749.3;
 
-    const scale = mediumScreen
+    let scale = mediumScreen
       ? Math.min(size.width / 650, 1.7)
       : Math.min(size.width / 280, 1.5);
-    const yRotation = mediumScreen ? -0.2 : 0;
-    const xPos = mediumScreen ? 9.2 : -0.5;
-    const yPos = mediumScreen
+    const yRotation = mediumScreen && !isClose ? -0.2 : 0;
+    const xPos = mediumScreen ? (isClose ? 0 : 9.2) : -0.5;
+    scale =
+      isClose && mediumScreen ? (showMobile ? scale * 1.5 : scale * 3) : scale;
+    let yPos = mediumScreen
       ? -14 + 10 + Math.pow(2, 4.2 - scale)
       : -2 + 15.5 - scale * 1.5;
+
+    yPos =
+      isClose && mediumScreen ? yPos - scale * (showMobile ? 2.3 : 4) : yPos;
 
     if (computerRef.current) {
       computerRef.current.position.setY(yPos);
@@ -62,7 +69,7 @@ const Computer = ({
         ease: "power2.out",
       });
     }
-  }, [size.width, showMobile]);
+  }, [size.width, showMobile, isClose]);
   return (
     <>
       <Environment preset="city" environmentIntensity={0.6} />

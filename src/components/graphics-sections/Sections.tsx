@@ -14,9 +14,11 @@ import Certificates3D from "./Certificates3D";
 const Sections = ({
   selectedProject,
   showMobile,
+  isClose,
 }: {
   selectedProject: ProjectName;
   showMobile?: boolean;
+  isClose: boolean;
 }) => {
   const { viewport, size } = useThree();
   const initHeightRef = useRef<number>(size.height);
@@ -100,7 +102,11 @@ const Sections = ({
         <Skills3D />
       </group>
       <group ref={projectsSection} position-y={-100}>
-        <Projects3D selectedProject={selectedProject} showMobile={showMobile} />
+        <Projects3D
+          selectedProject={selectedProject}
+          showMobile={showMobile}
+          isClose={isClose}
+        />
       </group>
       <group ref={certificatesSection} position-y={-100}>
         <Certificates3D />

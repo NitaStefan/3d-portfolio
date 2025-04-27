@@ -11,9 +11,14 @@ import Footer from "./components/Footer";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
+  const [isClose, setIsClose] = useState(false);
 
   const handleProjectChange = (project: Project) => {
     setSelectedProject(project);
+  };
+
+  const handleClose = () => {
+    setIsClose(!isClose);
   };
 
   return (
@@ -23,6 +28,7 @@ function App() {
           <Sections
             selectedProject={selectedProject.title}
             showMobile={selectedProject.showMobile}
+            isClose={isClose}
           />
         </Canvas>
       </section>
@@ -30,6 +36,8 @@ function App() {
       <Skills />
       <Projects
         handleProjectChange={handleProjectChange}
+        handleClose={handleClose}
+        isClose={isClose}
         selectedProject={selectedProject}
       />
       <Certificates />
