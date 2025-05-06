@@ -1,11 +1,15 @@
+import { useState } from "react";
+
 const Hero = () => {
+  const [hoveringEducation, setHoveringEducation] = useState(false);
+
   return (
     <section className="relative z-10 flex h-svh flex-col items-center justify-center px-[30px] max-sm:px-[15px] sm:gap-[80px]">
       <h1 className="text-primary text-[80px] font-extralight max-md:text-4xl">
         Hey, I&rsquo;m Ștefan Niță
       </h1>
 
-      <div className="flex w-full items-center justify-around gap-[30px] max-md:flex-col-reverse">
+      <div className="flex w-full items-center justify-around gap-[30px] max-md:flex-col-reverse md:h-87">
         <div className="w-[450px] max-sm:w-full">
           <div className="flex items-center font-light">
             <img
@@ -28,7 +32,9 @@ const Hero = () => {
               width={80}
               height={80}
               alt="education"
-              className="shrink-0 max-sm:w-[60px]"
+              className="shrink-0 cursor-[url('/icons/graduation-cap-2.svg')_10_10,_auto] max-sm:w-[60px]"
+              onMouseEnter={() => setHoveringEducation(true)}
+              onMouseLeave={() => setHoveringEducation(false)}
             />
             <div className="flex">
               <div className="ml-[10px] max-sm:text-sm">
@@ -53,7 +59,11 @@ const Hero = () => {
         </div>
         <div className="shrink-0 max-sm:pt-[20px]">
           <img
-            src="/images/professional-profile.png"
+            src={
+              hoveringEducation
+                ? "/images/graduation.png"
+                : "/images/professional-profile.png"
+            }
             width={140}
             height="auto"
             alt="Profile picture"
